@@ -1,0 +1,792 @@
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-image: url("arüarkaplan.png"); /* Resmin dosya adını ve uzantısını yaz */
+  background-size: cover; /* Resmi ekranı kaplayacak şekilde ayarlar */
+  background-repeat: no-repeat; /* Resmin tekrarlanmasını engeller */
+  background-position: center; /* Resmi ortalar */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #1A2B57;
+    padding: 10px 20px;
+    height: 53px;
+  
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  max-width: 100%;
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  white-space: nowrap;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.nav-menu a:hover {
+  color: #007BFF;
+}
+
+.join-btn {
+  background-color: #007BFF;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  height: 50px;
+  width: 250px;
+  margin-left: 55px;
+  margin-top: 4px; /* Biraz yukarı alır */
+  border-radius: 25px;
+}
+
+
+.join-btn:hover {
+  background-color: #0056b3;
+}
+.join-btn a{
+  color: white;
+  text-decoration: none;
+}
+
+/* Ekran genişliği 600px'den küçükse (mobil) */
+@media (max-width: 600px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .nav-center {
+    order: -1;
+  }
+} 
+.arkaresim {
+  height: 800px;
+  width: 100%;
+  background-image: url(anagörsel.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* arka resim  kısmı ve hareket sistemi */
+/* Görsel konteynerinin stil ayarları */
+.image-container {
+  position: relative;
+  width: 800px;
+  height: 400px;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Arka plan görselinin stil ayarları */
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Yazı tipi efektinin stil ayarları */
+.typewriter-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%); /* Yazıyı yatayda ortalar */
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  white-space: nowrap; /* Yazının bir satırda kalmasını sağlar */
+  border-right: 2px solid white;  /* Yazıcı imleci efekti */
+  overflow: hidden;
+  width: 0;  /* Başlangıçta yazı genişliği sıfır */
+  animation: typing 2s ease-in-out 1s forwards, /* Yazı tipi efekti */
+             erase 2s ease-in-out 3s forwards,  /* Silme efekti */
+             restart 1s ease-in-out 5s forwards; /* Bitişten sonra hızlı başlatma */
+}
+
+/* Yazı tipi yazma animasyonu */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 25ch; } /* Yazının genişliğini artırır */
+}
+
+/* Yazıyı silme animasyonu */
+@keyframes erase {
+  from { width: 30ch; }
+  to { width: 0; }
+}
+
+/* Yazı animasyonunu baştan başlatma (hızlı başlatma) */
+@keyframes restart {
+  from { width: 0; }
+  to { width: 0; }
+}
+
+/* Buton grubunun yerleşimi */
+.button-group {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%); /* Butonları yatayda ortalar */
+  display: flex;
+  gap: 20px; /* Butonlar arasına mesafe bırakır */
+}
+
+/* Buton stil ayarları */
+.btn {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s; /* Renk değişimi animasyonu */
+}
+
+/* Buton üzerine gelindiğinde renk değişimi */
+.btn:hover {
+  background-color: #6194cb;
+  color: white;
+  
+}
+.btn a{
+  color: white;
+  text-decoration: none;
+}
+
+/* arka resim  kısmı ve hareket sistemi bitişi*/
+
+.baslik{
+  margin-top: 120px;
+  display: flex;
+  justify-content: center; /* yatay */
+  align-items: center;     /* dikey */
+  height: 35px;           /* sayfa yüksekliği kadar alan */
+}
+
+.baslik h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #1A2B57;
+}
+
+.baslik1 {
+  margin-top: 60px;
+  display: flex;
+  height: 95px;
+  width: 85%;              /* genişliğin %70'i */
+  margin-left: auto;       /* ortalamak için */
+  margin-right: auto;      /* ortalamak için */
+}
+
+.baslik1 p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333333;
+}
+
+.gorsel {
+  margin-top: 60px;
+  display: flex;
+  height: 750px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  
+  background-image: url(gorsel.jpg);
+  background-repeat: no-repeat; /* Tekrar etmesin */
+  background-size: cover;       /* Alanı kaplasın */
+  background-position: center;  /* Ortalansın */
+  border-radius: 25px;
+}
+.baslik2{
+  margin-top: 60px;
+  display: flex;
+  height: 95px;
+  width: 85%;              /* genişliğin %70'i */
+  margin-left: auto;       /* ortalamak için */
+  margin-right: auto;      /* ortalamak için */
+}
+
+.baslik2 p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #52565B;
+}
+
+.baslik3{
+  margin-top: 60px;
+  display: flex;
+  height: 95px;
+  width: 85%;              /* genişliğin %70'i */
+  margin-left: auto;       /* ortalamak için */
+  margin-right: auto;      /* ortalamak için */
+}
+
+.baslik3 p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #52565B;
+}
+
+/* kutu kısmı ve hareket sistemi */
+
+.kutu {
+  margin-top: 60px;
+  height: 360px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  transition: transform 0.3s ease-in-out; /* Hareketi düzgünleştirir */
+}
+
+.kutu:hover {
+  transform: translateY(-10px); /* Yukarı doğru hareket eder */
+}
+
+/* kutu bitişi */
+
+/* misyon */
+
+.misyon{
+  
+  text-align: center;
+  margin-top: 5px;
+  margin-left: auto;       /* ortalamak için */
+  margin-right: auto;      /* ortalamak için */
+}
+
+.misyon h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #1A2B57;
+}
+
+.misyonmetin{
+  text-align: center;
+  margin-top: 15px;
+  margin-left: auto;       /* ortalamak için */
+  margin-right: auto;      /* ortalamak için */
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333333;
+}
+
+/* vizyon */
+.kutu1 {
+  margin-top: 20px;
+  height: 360px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-radius: 7px;
+  border-width: 1px;
+  transition: transform 0.3s ease-in-out; /* Hareketi düzgünleştirir */
+}
+
+.kutu1:hover {
+  transform: translateY(-10px); /* Yukarı doğru hareket eder */
+}
+.vizyon{
+  text-align: center;
+  margin-top: 15px;
+  margin-left: auto;       /* ortalamak için */
+  margin-right: auto;      /* ortalamak için */
+}
+
+.vizyon h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #1A2B57;
+}
+
+.vizyonmetin{
+  text-align: center;
+  margin-top: 25px;
+  margin-left: auto;       /* ortalamak için */
+  margin-right: auto;      /* ortalamak için */
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333333;
+}
+/* kulup */
+.kutu2 {
+  margin-top: 20px;
+  height: 360px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-radius: 7px;
+  border-width: 1px;
+  transition: transform 0.3s ease-in-out; /* Hareketi düzgünleştirir */
+}
+
+.kutu2:hover {
+  transform: translateY(-10px); /* Yukarı doğru hareket eder */
+}
+.kulup{
+  text-align: center;
+  margin-top: 15px;
+  margin-left: auto;       /* ortalamak için */
+  margin-right: auto;      /* ortalamak için */
+}
+
+.kulup h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #1A2B57;
+}
+
+.kulupmetin{
+  text-align: center;
+  margin-top: 25px;
+  margin-left: auto;       /* ortalamak için */
+  margin-right: auto;      /* ortalamak için */
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333333;
+}
+.altbaslik{
+margin-top: 65px;
+height: 50px;
+width: 455px;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+padding-top:1px;
+}
+
+.altbaslik h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #1A2B57;
+}
+
+/* genel kartlar kutusunun  ayarı*/
+.kartlar {
+  margin-bottom: 35px;
+  margin-top: 65px;
+  height: auto; /* Sabit yükseklik kaldırıldı */
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;           /* Kutuları yan yana diz */
+  gap: 20px;               /* Kutular arası boşluk */
+  padding: 20px;           /* İç boşluk */
+  box-sizing: border-box;  /* Padding genişliğe dahil olsun */
+}
+
+/* bootcampler*/
+.bootcampler{
+  display: inline-block;
+  text-align: center;
+  height: 280px;
+  width:300px;
+  background-color: #a8bcc8;
+  transition: transform 0.3s ease-in-out; /* Hareketi düzgünleştirir */
+}
+
+.bootcampler h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #1A2B57;
+}
+
+.bootcampler p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #1A2B57;
+}
+
+.bootcampler:hover{
+  transform: translateY(-10px); /* Yukarı doğru hareket eder */
+  background-color: #1A2B57;
+}
+
+.bootcampler:hover h4, .bootcampler:hover p {
+  color: #FFFFFF;
+}
+
+/* salon etkinlikleri*/
+.salon{
+  display: inline-block;
+  text-align: center;
+  height: 280px;
+  width:300px;
+  background-color: #a8bcc8;
+  transition: transform 0.3s ease-in-out; /* Hareketi düzgünleştirir */
+}
+
+.salon h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #1A2B57;
+}
+
+.salon p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.salon:hover{
+  transform: translateY(-10px); /* Yukarı doğru hareket eder */
+  background-color: #1C2952;
+}
+
+.salon:hover h4, .salon:hover p {
+  color: #FFFFFF;
+}
+
+/* ÇEKİLİŞ*/
+.cekilis{
+  display: inline-block;
+  text-align: center;
+  height: 280px;
+  width:300px;
+  background-color: #a8bcc8;
+  transition: transform 0.3s ease-in-out; /* Hareketi düzgünleştirir */
+}
+
+.cekilis h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #1A2B57;
+}
+
+.cekilis p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.cekilis:hover{
+  transform: translateY(-10px); /* Yukarı doğru hareket eder */
+  background-color: #1C2952;
+}
+
+.cekilis:hover h4, .cekilis:hover p {
+  color: #FFFFFF;
+}
+
+/* Takim*/
+.takim{
+  display: inline-block;
+  text-align: center;
+  height: 280px;
+  width:300px;
+  background-color: #a8bcc8;
+  transition: transform 0.3s ease-in-out; /* Hareketi düzgünleştirir */
+}
+
+.takim h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #1A2B57;
+}
+
+.takim p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.takim:hover{
+  transform: translateY(-10px); /* Yukarı doğru hareket eder */
+  background-color: #1C2952;
+}
+
+.takim:hover h4, .takim:hover p {
+  color: #FFFFFF;
+}
+
+/* Alt metin kısmı */
+.altmetin {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resimkutusu {
+  height: 200px;
+  width: 300px;
+  background-color: #ccc;
+  margin-bottom: 20px;
+}
+
+.resimkutuyazi {
+  text-align: center;
+  max-width: 600px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+/* FOOTER STYLES */
+.footer {
+  background-color: #1A2B57;
+  color: white;
+  padding: 40px 0 20px;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-logo-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  max-width: 400px;
+}
+
+.footer-logo {
+  width: 100px;
+  height: auto;
+}
+
+.club-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.club-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.club-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 2px 0;
+  color: #ccc;
+}
+
+.club-department {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.club-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.footer-links h3, .footer-contact h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s;
+  font-size: 14px;
+}
+
+.footer-links li:hover {
+  color: #ccc;
+}
+
+.footer-links i {
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.footer-contact p {
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-contact i {
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  font-size: 14px;
+}
+
+.social-icon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.heart {
+  color: #ff4d4d;
+}
+
+/* Responsive design for footer */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .footer-logo-section {
+    max-width: 100%;
+  }
+  
+  .footer-links, .footer-contact {
+    width: 100%;
+  }
+  
+  .kartlar {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .bootcampler, .salon, .cekilis, .takim {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Additional responsive improvements */
+@media (max-width: 992px) {
+  .kutu, .kutu1, .kutu2 {
+    height: auto;
+    padding: 20px;
+  }
+  
+  .baslik1, .baslik2, .baslik3 {
+    height: auto;
+    padding: 15px;
+  }
+}
